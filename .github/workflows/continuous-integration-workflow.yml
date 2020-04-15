@@ -7,11 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Validate composer.json and composer.lock
-        run: composer validate
-
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --no-suggest # can be changed to `make build-app`
 
       - name: Run test suite
         run: docker-compose run php /src/bin/phpunit --testdox # can be changed to `make tests-run`
