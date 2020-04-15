@@ -11,7 +11,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest # can be changed to `make build-app`
 
       - name: Install test dependencies
-        run: docker-compose run php /src/bin/phpunit --filter NotExistingTest
+        run: ./bin/phpunit --filter NotExistingTest
 
       - name: Run tests
         run: docker-compose run php /src/bin/phpunit --testdox # can be changed to `make tests-run`
