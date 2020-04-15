@@ -1,5 +1,7 @@
 name: Continuous integration workflow
-on: push
+on:
+  push:
+    - master
 
 jobs:
   build-and-test:
